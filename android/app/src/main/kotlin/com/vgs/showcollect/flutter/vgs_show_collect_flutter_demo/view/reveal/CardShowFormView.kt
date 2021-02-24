@@ -16,7 +16,7 @@ class CardShowFormView constructor(context: Context, messenger: BinaryMessenger?
 
     override val viewType: String get() = MainActivity.SHOW_FORM_VIEW_TYPE
 
-    private val vgsShow = VGSShow(context, MainActivity.TENANT_ID, MainActivity.ENVIRONMENT)
+    private val vgsShow = VGSShow(context, MainActivity.VAULT_ID, MainActivity.ENVIRONMENT)
 
     init {
 
