@@ -21,8 +21,16 @@ This examples shows how easily you can integrate VGS Collect/Show Android SDK in
 
 #### Step 1
 
-Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS organization</a> and 
-<a href="https://www.verygoodsecurity.io/docs/features/yaml#import-a-single-route" target="_blank">import</a> demo route ``YAML`` config (<a href="./flutter_demo_rout.yaml" target="_blank">Download</a>).
+Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS organization</a> and establish <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">Inbound connection</a>. For this demo you can import pre-built route configuration:
+
+<p align="center">
+<img src="dashboard_routs.png" width="600">
+</p>
+
+-  Find the **configuration.yaml** file inside the app repository and download it.
+-  Go to the **Routes** section on the <a href="https://dashboard.verygoodsecurity.com/" target="_blank">Dashboard</a> page and select the **Inbound** tab. 
+-  Press **Manage** button at the right corner and select **Import YAML file**.
+-  Choose **configuration.yaml** file that you just downloaded and tap on **Save** button to save the route.
 
 #### Step 2
 
@@ -34,10 +42,10 @@ Clone demo application repository.
 
 Setup `"<VAULT_ID>"`.
 
-##### Android
+##### Android:
 
 Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
 
-##### iOS
+##### iOS:
 
 > **_WARNING:_**  Currently is not implemented, will be available soon.
