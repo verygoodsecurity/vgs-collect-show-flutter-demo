@@ -28,4 +28,16 @@ Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS
 
 Clone demo application repository.
 
-``git clone git@github.com:verygoodsecurity/android-sdk-demo.git``
+`git clone git@github.com:verygoodsecurity/android-sdk-demo.git`
+
+#### Step 3
+
+Setup `"<VAULT_ID>"`.
+
+##### Android
+
+Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
+
+##### iOS
+
+> **_WARNING:_**  Currently is not implemented, will be available soon.

@@ -19,7 +19,7 @@ class CardCollectFormView constructor(context: Context, messenger: BinaryMesseng
 
     override val viewType: String get() = MainActivity.COLLECT_FORM_VIEW_TYPE
 
-    private val vgsCollect = VGSCollect(context, MainActivity.TENANT_ID, MainActivity.ENVIRONMENT)
+    private val vgsCollect = VGSCollect(context, MainActivity.VAULT_ID, MainActivity.ENVIRONMENT)
 
     private val cardNumberAlias = rootView.findViewById<TextView>(R.id.tvCardNumberAlias)
     private val cardDateAlias = rootView.findViewById<TextView>(R.id.tvExpDateAlias)
