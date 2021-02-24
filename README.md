@@ -17,12 +17,9 @@ This examples shows how easily you can integrate VGS Collect/Show Android SDK in
 - Organization with <a href="https://www.verygoodsecurity.com/">VGS</a>
 
 > **_NOTE:_**  Please visit Flutter <a href="https://flutter.dev/docs" target="_blank">documentation</a> 
->for more detailed explanation hot to setup it.
+>for more detailed explanation how to setup Flutter and IDEA.
 
 #### Step 1
 
 Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS organization</a> and 
-<a href="https://www.verygoodsecurity.io/docs/features/yaml#import-a-single-route" target="_blank">import</a> demo route config. 
-
-<a href="./flutter_demo_rout.yaml" target="_blank">Download</a> demo route ``YAML``.
-
+<a href="https://www.verygoodsecurity.io/docs/features/yaml#import-a-single-route" target="_blank">import</a> demo route ``YAML`` config (<a href="./flutter_demo_rout.yaml" target="_blank">Download</a>).
