@@ -2,8 +2,8 @@
 
 This examples shows how easily you can integrate VGS Collect/Show Android SDK into your Flutter application and secure sensitive data with us.
 
-> **_NOTE:_**  VGS does not support Flutter officially, this demo is just an example of how 
->VGS Collect/Show Android SDK can be integrated into your Flutter application.
+> **_NOTE:_**  VGS does not have Flutter support, this demo is just an example of how 
+>VGS Collect/Show Android SDKs can be integrated into your Flutter application.
 
 <p align="center">
     <img src="images/empty.png" width="150">    
@@ -53,4 +53,4 @@ Run the application (<a href="https://flutter.dev/docs/get-started/test-drive?ta
 Instruction for this step you can find <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">here</a>.
 
 
-> **_WARNING:_**  Currently iOS is not implemented, will be available soon.
+> **_WARNING:_**  This Demo App includes Android-Flutter examples only. Examples how to use iOS SDK in Flutter will be available soon.
