@@ -2,6 +2,9 @@
 
 This examples shows how easily you can integrate VGS Collect/Show Android SDK into your Flutter application and secure sensitive data with us.
 
+> **_NOTE:_**  VGS does not support Flutter officially, this demo is just an example of how 
+>VGS Collect/Show Android SDK can be integrated into you Flutter application.
+
 <p align="center">
     <img src="images/empty.png" width="150">    
     <img src="images/filled.png" width="150">    
@@ -48,11 +51,11 @@ Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with
 
 ##### iOS:
 
-> **_WARNING:_**  Currently is not implemented, will be available soon.
+> **_WARNING:_**  Currently iOS is not implemented, will be available soon.
 
 #### Step 4 
 
-Run the application. Submit and  the form then go to the Logs tab on a Dashboard find a request and secure a payload.
+Run the application. Submit and reveal the form then go to the Logs tab on a Dashboard find a request and secure a payload.
 Instruction for this step you can find <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">here</a>.
 
 > **_WARNING:_**  Currently iOS is not implemented, will be available soon.
