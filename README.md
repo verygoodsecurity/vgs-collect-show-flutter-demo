@@ -36,7 +36,7 @@ Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS
 
 Clone demo application repository.
 
-`git clone git@github.com:verygoodsecurity/android-sdk-demo.git`
+`git clone git@github.com:verygoodsecurity/vgs-collect-show-flutter-demo.git`
 
 #### Step 3
 
