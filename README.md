@@ -13,7 +13,7 @@ This examples shows how easily you can integrate VGS Collect/Show Android SDK in
 ### Requirements
 
 - Installed <a href="https://flutter.dev/docs/get-started/install" target="_blank">Flutter</a>
-- Setup <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio" target="_blank">editor</a>
+- Setup <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio" target="_blank">IDEA</a>
 - Organization with <a href="https://www.verygoodsecurity.com/">VGS</a>
 
 > **_NOTE:_**  Please visit Flutter <a href="https://flutter.dev/docs" target="_blank">documentation</a> 
