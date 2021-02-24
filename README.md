@@ -52,7 +52,7 @@ Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with
 
 #### Step 4 
 
-Run the application and submit the form then go to the Logs tab on a Dashboard find a request and secure a payload.
+Run the application. Submit and  the form then go to the Logs tab on a Dashboard find a request and secure a payload.
 Instruction for this step you can find <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">here</a>.
 
 > **_WARNING:_**  Currently iOS is not implemented, will be available soon.

@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialButton(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       color: Color(0xff3c4c5d),
-      child: new Text('Collect',
+      child: new Text('Submit',
           style: new TextStyle(fontSize: 16.0, color: Colors.white)),
       onPressed: () {
         collectController.redactCardAsync().then((value) {
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialButton(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       color: Color(0xff3c4c5d),
-      child: new Text('Show',
+      child: new Text('Reveal',
           style: new TextStyle(fontSize: 16.0, color: Colors.white)),
       onPressed: () {
         showController.revealCardAsync(cardToken, dateToken);

@@ -1,7 +1,6 @@
 package com.vgs.showcollect.flutter.vgs_show_collect_flutter_demo.view.reveal
 
 import android.content.Context
-import android.util.Log
 import com.verygoodsecurity.vgsshow.VGSShow
 import com.verygoodsecurity.vgsshow.core.network.client.VGSHttpMethod
 import com.vgs.showcollect.flutter.vgs_show_collect_flutter_demo.MainActivity
@@ -26,14 +25,13 @@ class CardShowFormView constructor(context: Context, messenger: BinaryMessenger?
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
-            "revealCard" -> revealCard(call, result)
+            "revealCard" -> revealCard(call)
         }
     }
 
-    private fun revealCard(call: MethodCall, result: MethodChannel.Result) {
+    private fun revealCard(call: MethodCall) {
         val data = call.arguments as ArrayList<*>
         runOnBackground {
-            Log.d("Test", call.arguments.toString())
             vgsShow.request("post", VGSHttpMethod.POST, mapOf(
                     "payment_card_number" to data[0],
                     "payment_card_expiration_date" to data[1]
