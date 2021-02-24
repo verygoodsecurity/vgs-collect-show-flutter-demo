@@ -3,9 +3,9 @@
 This examples shows how easily you can integrate VGS Collect/Show Android SDK into your Flutter application and secure sensitive data with us.
 
 <p align="center">
-    <img src="screenshots/empty.png" width="150">    
-    <img src="screenshots/filled.png" width="150">    
-    <img src="screenshots/revealed.png" width="150">     
+    <img src="images/empty.png" width="150">    
+    <img src="images/filled.png" width="150">    
+    <img src="images/revealed.png" width="150">     
 </p>
 
 ## How to run it?
@@ -24,7 +24,7 @@ This examples shows how easily you can integrate VGS Collect/Show Android SDK in
 Go to your <a href="https://dashboard.verygoodsecurity.com/" target="_blank">VGS organization</a> and establish <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">Inbound connection</a>. For this demo you can import pre-built route configuration:
 
 <p align="center">
-<img src="dashboard_routs.png" width="600">
+<img src="images/dashboard_routs.png" width="600">
 </p>
 
 -  Find the **configuration.yaml** file inside the app repository and download it.
