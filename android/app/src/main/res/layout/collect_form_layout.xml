@@ -28,7 +28,6 @@
             app:fieldName="cardNumber"
             app:imeOptions="actionNext"
             app:numberDivider=" "
-            app:text="4111111111111111"
             app:textColor="@color/colorPrimaryDark"
             app:textSize="12dp"
             tools:ignore="SpUsage" />
@@ -61,7 +60,6 @@
             android:layout_margin="16dp"
             android:padding="4dp"
             app:fieldName="expDate"
-            app:text="12/2024"
             app:textColor="@color/colorPrimaryDark"
             app:textSize="12dp"
             tools:ignore="SpUsage" />
