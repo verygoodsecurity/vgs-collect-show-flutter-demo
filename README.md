@@ -45,8 +45,6 @@ Clone demo application repository.
 
 Setup `"<VAULT_ID>"`.
 
-##### Android:
-
 Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
 
 #### Step 4 
