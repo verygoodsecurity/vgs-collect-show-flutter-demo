@@ -2,7 +2,7 @@
 
 This examples shows how easily you can integrate VGS Collect/Show SDKs into your Flutter application and secure sensitive data with us.
 
-> **_NOTE:_**  VGS does not have Flutter support, this demo is just an example of how 
+> **_NOTE:_**  VGS does not support Flutter. This demo is just an example of how 
 >VGS Collect/Show SDKs can be integrated into your Flutter application.
 
 <p align="center">
