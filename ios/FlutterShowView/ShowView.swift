@@ -10,8 +10,6 @@ import VGSShowSDK
 /// Native UIView subclass, holds VGSLabels.
 class ShowView: UIView {
 
-	let vgsShow = VGSShow(id: DemoAppConfig.shared.vaultId, environment: .sandbox)
-
 	// MARK: - Vars
 
 	private lazy var stackView: UIStackView = {
@@ -26,28 +24,18 @@ class ShowView: UIView {
 	}()
 
 	private lazy var cardNumberVGSLabel: VGSLabel = {
-		let label = VGSLabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.placeholder = "Card number"
-		label.font = UIFont.systemFont(ofSize: 14)
-		label.placeholderStyle.color = .black
-		label.placeholderStyle.textAlignment = .center
-		label.textAlignment = .center
+		let label = ShowView.provideStylesVGSLabel()
 
+		label.placeholder = "Card number"
 		label.contentPath = "json.payment_card_number"
 
 		return label
 	}()
 
 	private lazy var expirationDateLabel: VGSLabel = {
-		let label = VGSLabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.font = UIFont.systemFont(ofSize: 14)
-		label.placeholder = "Expiration date"
-		label.placeholderStyle.color = .black
-		label.placeholderStyle.textAlignment = .center
-		label.textAlignment = .center
+		let label = ShowView.provideStylesVGSLabel()
 
+		label.placeholder = "Expiration date"
 		label.contentPath = "json.payment_card_expiration_date"
 
 		return label
@@ -63,9 +51,6 @@ class ShowView: UIView {
 		stackView.addArrangedSubview(cardNumberVGSLabel)
 		stackView.addArrangedSubview(expirationDateLabel)
 
-		vgsShow.subscribe(cardNumberVGSLabel)
-		vgsShow.subscribe(expirationDateLabel)
-
 		cardNumberVGSLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
 		expirationDateLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
 	}
@@ -76,4 +61,21 @@ class ShowView: UIView {
 
 	// MARK: - Public
 
+	func subscribeViewsToShow(_ vgsShow: VGSShow) {
+		vgsShow.subscribe(cardNumberVGSLabel)
+		vgsShow.subscribe(expirationDateLabel)
+	}
+
+	// MARK: - Private
+
+	static private func provideStylesVGSLabel() -> VGSLabel {
+		let label = VGSLabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.font = UIFont.systemFont(ofSize: 14)
+		label.placeholderStyle.color = .black
+		label.placeholderStyle.textAlignment = .center
+		label.textAlignment = .center
+
+		return label
+	}
 }

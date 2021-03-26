@@ -13,6 +13,8 @@ class FlutterShowView: NSObject, FlutterPlatformView {
 
 	// MARK: - Vars
 
+	let vgsShow = VGSShow(id: DemoAppConfig.shared.vaultId, environment: .sandbox)
+
 	let showView: ShowView
 	let messenger: FlutterBinaryMessenger
 	let channel: FlutterMethodChannel
@@ -32,11 +34,12 @@ class FlutterShowView: NSObject, FlutterPlatformView {
 																			 binaryMessenger: messenger)
 
 		super.init()
+		self.showView.subscribeViewsToShow(vgsShow)
 
 		channel.setMethodCallHandler({ (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
 			switch call.method {
 			case "revealCard":
-					revealCard(with: call, result: result)
+				self.revealCard(with: call, result: result)
 			default:
 					result(FlutterMethodNotImplemented)
 			}
