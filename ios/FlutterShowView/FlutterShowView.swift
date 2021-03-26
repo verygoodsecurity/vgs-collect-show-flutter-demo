@@ -8,12 +8,17 @@ import Flutter
 import UIKit
 import VGSShowSDK
 
+/// FlutterPlatformView wrapper for VGSShowView.
 class FlutterShowView: NSObject, FlutterPlatformView {
+
+	// MARK: - Vars
 
 	let showView: ShowView
 	let messenger: FlutterBinaryMessenger
 	let channel: FlutterMethodChannel
 	let viewId: Int64
+
+	// MARK: - Initialization
 
 	init(messenger: FlutterBinaryMessenger,
 			 frame: CGRect,
@@ -31,92 +36,22 @@ class FlutterShowView: NSObject, FlutterPlatformView {
 		channel.setMethodCallHandler({ (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
 			switch call.method {
 			case "revealCard":
-					self.showView.revealCard(with: call, result: result)
+					revealCard(with: call, result: result)
 			default:
 					result(FlutterMethodNotImplemented)
 			}
 		})
 	}
 
-	public func sendFromNative(_ text: String) {
-		 channel.invokeMethod("sendFromNative", arguments: text)
-	 }
+	// MARK: - FlutterPlatformView
 
 	public func view() -> UIView {
 	 return showView
 	}
-}
 
-class ShowView: UIView {
+	// MARK: - Helpers
 
-	let vgsShow = VGSShow(id: DemoAppConfig.shared.vaultId, environment: .sandbox)
-
-  // MARK: - Vars
-
-	private lazy var stackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.translatesAutoresizingMaskIntoConstraints = false
-		stackView.axis = .vertical
-
-		stackView.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-		stackView.distribution = .fill
-		stackView.spacing = 16
-		return stackView
-	}()
-
-	private lazy var cardNumberVGSLabel: VGSLabel = {
-		let label = VGSLabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.placeholder = "Card number"
-		label.font = UIFont.systemFont(ofSize: 14)
-		label.placeholderStyle.color = .black
-		label.placeholderStyle.textAlignment = .center
-		label.textAlignment = .center
-
-		label.contentPath = "json.payment_card_number"
-
-		return label
-	}()
-
-	private lazy var expirationDateLabel: VGSLabel = {
-		let label = VGSLabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.font = UIFont.systemFont(ofSize: 14)
-		label.placeholder = "Expiration date"
-		label.placeholderStyle.color = .black
-		label.placeholderStyle.textAlignment = .center
-		label.textAlignment = .center
-
-		label.contentPath = "json.payment_card_expiration_date"
-
-		return label
-	}()
-
-	// MARK: - Initialization
-
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-
-		addSubview(stackView)
-		stackView.pinToSuperviewEdges()
-		stackView.addArrangedSubview(cardNumberVGSLabel)
-		stackView.addArrangedSubview(expirationDateLabel)
-
-		vgsShow.subscribe(cardNumberVGSLabel)
-		vgsShow.subscribe(expirationDateLabel)
-
-		cardNumberVGSLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
-		expirationDateLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
-	}
-
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-
-  // MARK: - Public
-
-	func revealCard(with flutterMethodCall: FlutterMethodCall, result: @escaping FlutterResult)  {
-		cardNumberVGSLabel.backgroundColor = .orange
+ 	private func revealCard(with flutterMethodCall: FlutterMethodCall, result: @escaping FlutterResult)  {
 		var errorInfo: [String : Any] = [:]
 		var payload: [String : Any] = [:]
 		guard let args = flutterMethodCall.arguments as? [Any],
@@ -129,7 +64,6 @@ class ShowView: UIView {
 			return
 		}
 
-		cardNumberVGSLabel.backgroundColor = .green
 		payload["payment_card_number"] = cardToken
 		payload["payment_card_expiration_date"] = expDateToken
 
@@ -152,11 +86,4 @@ class ShowView: UIView {
 			}
 		}
 	}
-}
-
-extension Collection {
-		/// Returns the element at the specified index if it is within bounds, otherwise nil.
-		subscript (safe index: Index) -> Element? {
-				return indices.contains(index) ? self[index] : nil
-		}
 }
