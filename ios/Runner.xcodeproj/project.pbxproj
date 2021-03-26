@@ -14,6 +14,10 @@
 		444ED690260DB399000410DD /* FlutterShowViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED68F260DB399000410DD /* FlutterShowViewFactory.swift */; };
 		444ED694260DB48D000410DD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED693260DB48D000410DD /* Collection+Extensions.swift */; };
 		444ED696260DB4BC000410DD /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED695260DB4BC000410DD /* ShowView.swift */; };
+		444ED698260DB6E5000410DD /* FlutterShowViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED697260DB6E5000410DD /* FlutterShowViewPlugin.swift */; };
+		444ED69A260DB711000410DD /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED699260DB711000410DD /* CollectView.swift */; };
+		444ED69C260DB751000410DD /* FlutterCollectViewPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED69B260DB751000410DD /* FlutterCollectViewPlugin.swift */; };
+		444ED69E260DB7C0000410DD /* FlutterCollectViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444ED69D260DB7C0000410DD /* FlutterCollectViewFactory.swift */; };
 		4468C04225E8FDDA001AA09A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468C04125E8FDDA001AA09A /* UIView+Extensions.swift */; };
 		44B5DDE925EE05D30033886A /* FlutterCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5DDE825EE05D30033886A /* FlutterCollectView.swift */; };
 		621C9BD3A8CD8BC39B4ABAEF /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43518E33D8DBF44F62687437 /* Pods_Runner.framework */; };
@@ -47,6 +51,10 @@
 		444ED68F260DB399000410DD /* FlutterShowViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterShowViewFactory.swift; sourceTree = "<group>"; };
 		444ED693260DB48D000410DD /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		444ED695260DB4BC000410DD /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		444ED697260DB6E5000410DD /* FlutterShowViewPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterShowViewPlugin.swift; sourceTree = "<group>"; };
+		444ED699260DB711000410DD /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
+		444ED69B260DB751000410DD /* FlutterCollectViewPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCollectViewPlugin.swift; sourceTree = "<group>"; };
+		444ED69D260DB7C0000410DD /* FlutterCollectViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCollectViewFactory.swift; sourceTree = "<group>"; };
 		4468C04125E8FDDA001AA09A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		44B5DDE825EE05D30033886A /* FlutterCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlutterCollectView.swift; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 				4438D27025E8F742002A25C3 /* FlutterShowView.swift */,
 				444ED68F260DB399000410DD /* FlutterShowViewFactory.swift */,
 				444ED695260DB4BC000410DD /* ShowView.swift */,
+				444ED697260DB6E5000410DD /* FlutterShowViewPlugin.swift */,
 			);
 			path = FlutterShowView;
 			sourceTree = SOURCE_ROOT;
@@ -122,6 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				44B5DDE825EE05D30033886A /* FlutterCollectView.swift */,
+				444ED699260DB711000410DD /* CollectView.swift */,
+				444ED69B260DB751000410DD /* FlutterCollectViewPlugin.swift */,
+				444ED69D260DB7C0000410DD /* FlutterCollectViewFactory.swift */,
 			);
 			path = FlutterCollectView;
 			sourceTree = "<group>";
@@ -342,13 +354,17 @@
 			files = (
 				4419C77D25EE2BD90071C902 /* DemoAppConfig.swift in Sources */,
 				4438D27125E8F742002A25C3 /* FlutterShowView.swift in Sources */,
+				444ED69E260DB7C0000410DD /* FlutterCollectViewFactory.swift in Sources */,
 				44B5DDE925EE05D30033886A /* FlutterCollectView.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				4468C04225E8FDDA001AA09A /* UIView+Extensions.swift in Sources */,
 				444ED694260DB48D000410DD /* Collection+Extensions.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
+				444ED69C260DB751000410DD /* FlutterCollectViewPlugin.swift in Sources */,
 				444ED690260DB399000410DD /* FlutterShowViewFactory.swift in Sources */,
 				444ED696260DB4BC000410DD /* ShowView.swift in Sources */,
+				444ED69A260DB711000410DD /* CollectView.swift in Sources */,
+				444ED698260DB6E5000410DD /* FlutterShowViewPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

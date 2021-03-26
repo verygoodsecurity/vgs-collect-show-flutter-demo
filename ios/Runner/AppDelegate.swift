@@ -14,17 +14,3 @@ import Flutter
 				return super.application(application, didFinishLaunchingWithOptions: launchOptions)
 		}
 }
-
-public class FlutterShowViewPlugin {
- class func register(with registrar: FlutterPluginRegistrar) {
-	 let viewFactory = FlutterShowViewFactory(messenger: registrar.messenger())
-	 registrar.register(viewFactory, withId: "card-show-form-view")
- }
-}
-
-public class FlutterCollectViewPlugin {
- class func register(with registrar: FlutterPluginRegistrar) {
-	 let viewFactory = FlutterCollectViewFactory(messenger: registrar.messenger())
-	 registrar.register(viewFactory, withId: "card-collect-form-view")
- }
-}

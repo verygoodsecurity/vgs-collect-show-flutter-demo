@@ -8,38 +8,19 @@ import Flutter
 import UIKit
 import VGSCollectSDK
 
-class FlutterCollectViewFactory: NSObject, FlutterPlatformViewFactory {
-
-  // MARK: - Private vars
-
-	private var messenger: FlutterBinaryMessenger
-
-	// MARK: - Initialization
-
-	init(messenger: FlutterBinaryMessenger) {
-		self.messenger = messenger
-	}
-
-	// MARK: - Public
-
-	public func create(withFrame frame: CGRect,
-										 viewIdentifier viewId: Int64,
-										 arguments args: Any?) -> FlutterPlatformView {
-		return FlutterCollectView(messenger: messenger,
-															frame: frame, viewId: viewId,
-															args: args)
-	}
-	public func createArgsCodec() -> FlutterMessageCodec & NSObjectProtocol {
-		return FlutterStandardMessageCodec.sharedInstance()
-	}
-}
-
+/// FlutterPlatformView wrapper for Collect view.
 class FlutterCollectView: NSObject, FlutterPlatformView {
+
+  // MARK: - Vars
+
+	let vgsCollect = VGSCollect(id: DemoAppConfig.shared.vaultId, environment: .sandbox)
 
 	let collectView: CollectView
 	let messenger: FlutterBinaryMessenger
 	let channel: FlutterMethodChannel
 	let viewId: Int64
+
+	// MARK: - Initializer
 
 	init(messenger: FlutterBinaryMessenger,
 			 frame: CGRect,
@@ -53,103 +34,27 @@ class FlutterCollectView: NSObject, FlutterPlatformView {
 																			 binaryMessenger: messenger)
 
 		super.init()
+		self.collectView.configureFieldsWithCollect(vgsCollect)
 
 		channel.setMethodCallHandler({ (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
 			switch call.method {
 			case "redactCard":
-				self.collectView.redactCard(with: result)
+				self.redactCard(with: result)
 			default:
 				result(FlutterMethodNotImplemented)
 			}
 		})
 	}
 
-	public func sendFromNative(_ text: String) {
-		 channel.invokeMethod("sendFromNative", arguments: text)
-	 }
+	// MARK: - FlutterPlatformView
 
 	public func view() -> UIView {
 	 return collectView
 	}
-}
 
-class CollectView: UIView {
+	// MARK: - Helpers
 
-  // MARK: - Vars
-
-	let vgsCollect = VGSCollect(id: DemoAppConfig.shared.vaultId, environment: .sandbox)
-
-	lazy var stackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.translatesAutoresizingMaskIntoConstraints = false
-		stackView.axis = .vertical
-
-		stackView.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-		stackView.distribution = .fill
-		stackView.spacing = 16
-		return stackView
-	}()
-
-	lazy var cardNumberField: VGSCardTextField = {
-		let field = VGSCardTextField()
-		field.translatesAutoresizingMaskIntoConstraints = false
-		field.placeholder = "Card number"
-		field.font = UIFont.systemFont(ofSize: 12)
-		field.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-
-		let cardConfiguration = VGSConfiguration(collector: vgsCollect, fieldName: "cardNumber")
-		field.configuration = cardConfiguration
-
-		return field
-	}()
-
-	lazy var expDateField: VGSExpDateTextField = {
-		let field = VGSExpDateTextField()
-		field.translatesAutoresizingMaskIntoConstraints = false
-		field.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-
-		field.font = UIFont.systemFont(ofSize: 12)
-		// Update validation rules
-
-		let expDateConfiguration = VGSConfiguration(collector: vgsCollect, fieldName: "expDate")
-		expDateConfiguration.isRequiredValidOnly = true
-		expDateConfiguration.type = .expDate
-
-		// Default .expDate format is "##/##"
-		expDateConfiguration.formatPattern = "##/####"
-		expDateConfiguration.validationRules = VGSValidationRuleSet(rules: [
-			VGSValidationRuleCardExpirationDate(dateFormat: .longYear, error: VGSValidationErrorType.expDate.rawValue)
-		])
-
-		field.configuration = expDateConfiguration
-		field.placeholder = "MM/YYYY"
-		field.monthPickerFormat = .longSymbols
-
-		return field
-	}()
-
-	// MARK: - Initialization
-
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-
-		addSubview(stackView)
-		stackView.pinToSuperviewEdges()
-		stackView.addArrangedSubview(cardNumberField)
-		stackView.addArrangedSubview(expDateField)
-
-		cardNumberField.heightAnchor.constraint(equalToConstant: 60).isActive = true
-		expDateField.heightAnchor.constraint(equalToConstant: 60).isActive = true
-	}
-
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-
-	// MARK: - Public
-
-	func redactCard(with result: @escaping FlutterResult)  {
-		cardNumberField.backgroundColor = .yellow
+	private func redactCard(with result: @escaping FlutterResult)  {
 		vgsCollect.sendData(path: "/post", extraData: nil) { [weak self](response) in
 			switch response {
 			case .success(_, let data, _):
