@@ -23,7 +23,7 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 > **_NOTE:_**  Please visit Flutter <a href="https://flutter.dev/docs" target="_blank">documentation</a> 
 >for more detailed explanation how to setup Flutter and IDEA.</br>
 >iOS sample is compatitable with Flutter 1.22.6 version.</br> 
->Check Flutter <a href="https://github.com/flutter/flutter/issues" target="_blank">issues</a> 
+>Check Flutter issues <a href="https://github.com/flutter/flutter/issues" target="_blank">here.</a>
 
 #### Step 1
 
