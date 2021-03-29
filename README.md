@@ -12,9 +12,9 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 </p>
 
 <p align="center">
-    <img src="images/iOS/ios-empty.png" width="150">    
-    <img src="images/iOS/ios-filled.png" width="150">    
-    <img src="images/iOS/ios-revealed.png" width="170">     
+    <img src="images/iOS/ios-empty.png" width="200">    
+    <img src="images/iOS/ios-filled.png" width="200">    
+    <img src="images/iOS/ios-revealed.png" width="200">     
 </p>
 
 ## How to run it?
