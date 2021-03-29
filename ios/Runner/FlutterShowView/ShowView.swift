@@ -29,6 +29,18 @@ class ShowView: UIView {
 		label.placeholder = "Card number"
 		label.contentPath = "json.payment_card_number"
 
+		// Create regex object, split card number to XXXX XXXX XXXX XXXX format.
+		do {
+			let cardNumberPattern = "(\\d{4})(\\d{4})(\\d{4})(\\d{4})"
+			let template = "$1 $2 $3 $4"
+			let regex = try NSRegularExpression(pattern: cardNumberPattern, options: [])
+
+			// Add transformation regex to your label.
+			label.addTransformationRegex(regex, template: template)
+		} catch {
+			assertionFailure("invalid regex, error: \(error)")
+		}
+
 		return label
 	}()
 
