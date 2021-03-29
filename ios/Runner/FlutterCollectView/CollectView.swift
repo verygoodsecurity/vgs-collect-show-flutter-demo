@@ -68,6 +68,7 @@ class CollectView: UIView {
 
 	func configureFieldsWithCollect(_ vgsCollect: VGSCollect) {
 		let cardConfiguration = VGSConfiguration(collector: vgsCollect, fieldName: "cardNumber")
+		cardConfiguration.type = .cardNumber
 		cardNumberField.configuration = cardConfiguration
 
 		let expDateConfiguration = VGSConfiguration(collector: vgsCollect, fieldName: "expDate")
