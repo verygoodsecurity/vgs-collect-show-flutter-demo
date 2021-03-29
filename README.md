@@ -17,6 +17,7 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 
 - Installed <a href="https://flutter.dev/docs/get-started/install" target="_blank">Flutter</a>
 - Setup <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio" target="_blank">IDEA</a>
+- Setup <a href="https://flutter.dev/docs/get-started/install/macos#install-xcode" target="_blank">Xcode</a>
 - Organization with <a href="https://www.verygoodsecurity.com/">VGS</a>
 
 > **_NOTE:_**  Please visit Flutter <a href="https://flutter.dev/docs" target="_blank">documentation</a> 
