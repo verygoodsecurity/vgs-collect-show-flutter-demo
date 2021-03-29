@@ -47,10 +47,13 @@ Setup `"<VAULT_ID>"`.
 
 Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
 
+Find `DemoAppConfig.swift` in `iOS` package and replace `vaultId` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
+
 #### Step 4 
 
-Run the application (<a href="https://flutter.dev/docs/get-started/test-drive?tab=androidstudio" target="_blank">Run app Flutter docs</a>). Submit and reveal the form then go to the Logs tab on a Dashboard find a request and secure a payload.
+Run the Android application (<a href="https://flutter.dev/docs/get-started/test-drive?tab=androidstudio" target="_blank">Run app Flutter docs</a>). 
+
+Run the iOS application on Simulator (<a href="https://flutter.dev/docs/get-started/install/macos#set-up-the-ios-simulator" target="_blank">Run app Flutter docs</a>). 
+
+Submit and reveal the form then go to the Logs tab on a Dashboard find a request and secure a payload.
 Instruction for this step you can find <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">here</a>.
-
-
-> **_WARNING:_**  This Demo App includes Android-Flutter examples only. Examples how to use iOS SDK in Flutter will be available soon.
