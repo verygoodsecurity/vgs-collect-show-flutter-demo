@@ -24,6 +24,7 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 - Installed <a href="https://flutter.dev/docs/get-started/install" target="_blank">Flutter</a>
 - Setup <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio" target="_blank">IDEA</a>
 - Setup <a href="https://flutter.dev/docs/get-started/install/macos#install-xcode" target="_blank">Xcode</a>
+- Install <a href="https://cocoapods.org/" target="_blank">Cocoapods</a> for running iOS
 - Organization with <a href="https://www.verygoodsecurity.com/">VGS</a>
 
 > **_NOTE:_**  Please visit Flutter <a href="https://flutter.dev/docs" target="_blank">documentation</a> 
@@ -58,11 +59,23 @@ Find `MainActivity.kt` in `android` package and replace `VAULT_ID` constant with
 
 Find `DemoAppConfig.swift` in `iOS` package and replace `vaultId` constant with your <a href="https://www.verygoodsecurity.com/docs/terminology/nomenclature#vault" target="_blank">vault id</a>.
 
-#### Step 4 
+#### Step 4
+
+#### Android
 
 Run the Android application (<a href="https://flutter.dev/docs/get-started/test-drive?tab=androidstudio" target="_blank">Run Android app Flutter docs</a>). 
 
+#### iOS
+
+Before running iOS project `cd` to your the sample project directory, `cd ios` and run:
+
+```ruby
+pod update
+```
+
 Run the iOS application on Simulator (<a href="https://flutter.dev/docs/get-started/install/macos#set-up-the-ios-simulator" target="_blank">Run iOS app Flutter docs</a>). 
+
+#### Step 5
 
 Submit and reveal the form then go to the Logs tab on a Dashboard find a request and secure a payload.
 Instruction for this step you can find <a href="https://www.verygoodsecurity.com/docs/getting-started/quick-integration#securing-inbound-connection" target="_blank">here</a>.
