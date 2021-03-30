@@ -6,13 +6,11 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 >VGS Collect/Show SDKs can be integrated into your Flutter application.
 
 <p align="center">
-    <img src="images/empty.png" width="150">    
     <img src="images/filled.png" width="150">    
     <img src="images/revealed.png" width="150">     
 </p>
 
 <p align="center">
-    <img src="images/iOS/ios-empty.png" width="200" height="450" alt="ios-collect-show-flutter-bridge-sample-empty">    
     <img src="images/iOS/ios-filled.png" width="200" height="450" alt="ios-collect-show-flutter-bridge-sample-filled">    
     <img src="images/iOS/ios-revealed.png" width="200" height="450" alt="ios-collect-show-flutter-bridge-sample-revealed">     
 </p>
