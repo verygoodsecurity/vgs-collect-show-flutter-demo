@@ -12,8 +12,8 @@ This examples shows how easily you can integrate VGS Collect/Show SDKs into your
 </p>
 
 <p align="center">
-    <img src="images/iOS/ios-empty.png" width="200" height="500">    
-    <img src="images/iOS/ios-filled.png" width="200" height="500">    
+    <img src="images/iOS/ios-empty.png" width="200" height="450" alt="ios-flutter-bridge-sample-empty">    
+    <img src="images/iOS/ios-filled.png" width="200" height="450">    
     <img src="images/iOS/ios-revealed.png" width="200">     
 </p>
 
