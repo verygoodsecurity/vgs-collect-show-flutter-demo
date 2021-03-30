@@ -67,11 +67,13 @@ Run the Android application (<a href="https://flutter.dev/docs/get-started/test-
 
 #### iOS
 
-Before running iOS project `cd` to your the sample project directory, `cd ios` and run:
+Before running iOS project `cd` to flutter sample project directory, `cd ios` and run:
 
 ```ruby
 pod update
 ```
+
+`cd..` back to flutter sample project directory.
 
 Run the iOS application on Simulator (<a href="https://flutter.dev/docs/get-started/install/macos#set-up-the-ios-simulator" target="_blank">Run iOS app Flutter docs</a>). 
 
