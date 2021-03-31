@@ -110,9 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ]),
     );
-    // return Center(
-    //     child: Text("iOS is not implemented, will be available soon.",
-    //         style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)));
   }
 
   Widget _cardCollect() {
